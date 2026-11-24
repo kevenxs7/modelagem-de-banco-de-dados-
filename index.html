@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dicionário de Dados - FH NET TELECOM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menuBtn" class="btn ghost" aria-label="Menu">Menu</button>
+  <div class="ttl"><strong>Dicionário de Dados - Gestão de Clientes, Rede e Faturamento</strong><span>FH NET TELECOM</span></div>
+  <button id="themeBtn" class="btn ghost">Modo escuro</button>
+</header>
+<nav id="sidebar" class="sidebar"><h3>Tabelas</h3><div id="navList"></div></nav>
+<main class="main">
+  <section id="identificacao" class="card">
+    <h2>Identificação do Projeto</h2>
+    <p><b>Escopo:</b> Plataforma centralizada de gestão de clientes, planos, assinaturas, equipamentos, ordens de serviço, cobrança, pagamentos e monitoramento de conexão (online/offline) da FH NET TELECOM, provedor de internet residencial de Guarulhos/SP, com base inicial de até 1.000 assinantes, em conformidade com LGPD, CDC e Marco Civil da Internet.</p>
+    <p><b>Tecnologia:</b> MySQL (InnoDB, utf8mb4) - schema <code>assinatura_telecom</code>. <b>Orientador:</b> Prof. Dr. Diego Carvalho.</p>
+    <h3>Responsáveis</h3>
+    <div class="table-wrap"><table><thead><tr><th>Integrante</th><th>Papel</th><th>Responsabilidade</th></tr></thead><tbody id="resp"></tbody></table></div>
+  </section>
+  <section class="card controls">
+    <a class="btn" href="docs/Especificacao_Requisitos_Regras_Negocio_BD.pdf" download>Baixar Especificação de Requisitos (PDF)</a>
+    <button id="derBtn" class="btn">Abrir DER</button>
+    <input id="search" type="search" placeholder="Filtrar por tabela ou coluna..." aria-label="Pesquisar">
+    <p class="legend">Privacidade: <span class="badge dps">DPS</span> <span class="badge dp">DP</span> <span class="badge na">N/A</span></p>
+  </section>
+  <div id="dict"></div>
+  <p id="empty" hidden>Nenhum resultado encontrado.</p>
+</main>
+<div id="modal" class="modal" hidden>
+  <div class="tools"><button id="zin" class="btn">Zoom +</button><button id="zout" class="btn">Zoom -</button><button id="zrst" class="btn">Reset</button><button id="zclose" class="btn">Fechar</button></div>
+  <div id="stage" class="stage"><img id="derImg" src="assets/der.png" alt="Diagrama Entidade-Relacionamento"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
